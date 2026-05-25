@@ -16,7 +16,7 @@ load_dotenv()
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 if not API_KEY:
-    API_KEY = st.secrets["OPENROUTER_API_KEY"]
+    API_KEY = st.secrets.get("OPENROUTER_API_KEY")
 
 # -----------------------------
 # EXTRACT DURATION
