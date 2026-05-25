@@ -257,38 +257,9 @@ Rules:
 
 if st.session_state.roadmap:
 
-
-
-    # -----------------------------
-    # ROADMAP CARDS
-    # -----------------------------
-
-    months = st.session_state.roadmap.split("## ")
-
-    for month in months:
-
-        if month.strip() != "":
-
-            lines = month.split("\n")
-
-            title = lines[0]
-
-            content = "\n".join(lines[1:])
-
-            st.markdown(
-                f"""
-                <div class="roadmap-card">
-
-                <h2>
-                📚 {title}
-                </h2>
-
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-            st.markdown(content)
+    st.markdown(
+        st.session_state.roadmap
+    )
 
     # -----------------------------
     # SUCCESS
@@ -325,7 +296,6 @@ if st.session_state.roadmap:
         st.warning(
             "PDF generation temporarily unavailable."
         )
-
 # -----------------------------
 # FOOTER
 # -----------------------------
